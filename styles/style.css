@@ -1,0 +1,602 @@
+/* Estilo Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #000;
+    height: 100vh;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #00ff08;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+h2.titulo {
+    color: #fff;
+    font-size: 38px;
+    text-align: center;
+    padding: 20px;
+}
+
+h2.titulo span {
+    color: #00ff08;
+    font-size: 25px;
+    padding: 10px;
+}
+
+/* Estilo do cabeçalho */
+header {
+    padding: 40px 4%;
+}
+
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: #d7d7d7;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header a:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Menu Desktop */
+nav.menu-desktop ul {
+    list-style-type: none;
+    display: flex; /* Garante que o menu seja flexível no desktop */
+}
+
+nav.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+/* Menu Mobile */
+/* Sidebar oculta por padrão */
+.sidebar {
+    display: none; /* Oculta o menu lateral por padrão */
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar a {
+    width: 100%;
+    color: #00ff22;
+    padding: 15px 20px;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+/* Botão hambúrguer oculto por padrão */
+.menu-button {
+    display: none;
+}
+
+/* Exibir o botão hambúrguer e ocultar o menu principal em telas menores que 768px */
+@media (max-width: 768px) {
+    .menu-list {
+        display: none; /* Oculta o menu completo */
+    }
+
+    .menu-button {
+        display: block; /* Exibe o botão hambúrguer */
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .menu-button i {
+        font-size: 30px;
+        color: #ff00cc;
+        cursor: pointer;
+    }
+
+    .sidebar {
+        display: none; /* Mantém a sidebar oculta até o clique no botão */
+    }
+}
+
+/* Para telas maiores que 768px */
+@media (min-width: 768px) {
+    .menu-list {
+        display: flex; /* Exibe o menu completo */
+    }
+
+    .menu-button {
+        display: none; /* Oculta o botão hambúrguer */
+    }
+
+    .sidebar {
+        display: none; /* Esconde o menu lateral */
+    }
+}
+
+
+
+
+        /* Estilo do topo do site*/
+
+        section.topo-do-site {
+            padding: 40px 4%;
+        }
+
+        section.topo-do-site .flex {
+            align-items: center;
+            justify-content: center;
+            gap: 90px;
+        }
+
+        .topo-do-site h1 {
+            color: #fff;
+            font-size: 42px;
+            line-height: 40px;
+        }
+
+        .topo-do-site .txt-topo-site h1 span {
+            color: #00ff08;
+            font-size: 80px;
+        }
+
+        .topo-do-site .txt-topo-site p {
+            color: #fff;
+            margin: 40px 0;
+        }
+
+        .topo-do-site .img-topo-site img {
+            position: relative;
+            animation: flutuar 2s ease-in-out infinite alternate;
+        }
+
+        /* Formulario Calculadora*/
+       
+        .calculadora {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1{
+            text-align: center;
+            color: #00ff08;
+            padding: 30px;
+        }
+
+        .calculadora h2 {
+            text-align: center;
+            color: #00ff08;
+            font-size: 50px;
+            padding: 20px;
+         
+        }
+
+        .calculadora-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .calculadora-box {
+            background-color: rgb(80, 80, 80);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculadora-box h3 {
+            color: #f3f3f3;
+        }
+
+      
+
+        button {
+            padding: 10px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: #00ff08;
+            border: 0;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        form input,
+        form select,
+        form textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        form h4, form h5 {
+            margin-top: 15px;
+        }
+        
+        form ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        form ul li {
+            margin-top: 5px;
+        }
+
+        /* Coloca os botões lado a lado */
+
+        form button[type="button"] {
+            display: inline-block;
+            width: calc(50%-20px);
+        }
+
+        form button[type="button"]:first-of-type {
+            margin-right: 20px;
+        }
+
+        /* Adiciona flexbox para alinhar os botões lado a lado */
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Distribui os botões com espaço entre eles */
+            margin-top: 10px;
+        }
+
+        .button-container button {
+            flex: 1; /* Os botões ocupam espaço igual */
+            margin: 0 5px; /* Espaçamento entre os botões */
+        }
+
+        .button-container button:first-child {
+            margin-left: 0;
+        }
+
+        .button-container button:last-child {
+            margin-right: 0;
+        }
+
+        input[readonly] {
+            background-color: #a5a5a5;
+            cursor: not-allowed;
+        }
+
+
+        @keyframes flutuar {
+            0% {
+                top: 0;
+            }
+
+            100% {
+                top: 30px;
+            }
+        }
+
+        /* ESTILO DAS ESPECIALIDADES */
+
+        section.especialidades {
+            padding: 40px 4%;
+        }
+
+        section.especialidades .flex {
+            gap: 60px;
+        }
+
+        .especialidades .especialidades-box {
+            color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 45px;
+            transition: .2s;
+        }
+
+        .especialidades .especialidades-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 8px #fff;
+        }
+
+        .especialidades .especialidades-box i {
+            font-size: 70px;
+            color: #00ff08;
+        }
+
+        .especialidades .especialidades-box p {
+            font-size: 26px;
+            color: #00ff08;
+        }
+
+        /* ESTILO DO SOBRE */
+
+        section.sobre {
+            padding: 80px 4%;
+        }
+
+        section.sobre .flex {
+            align-items: center;
+            gap: 60px;
+        }
+
+        .sobre .txt-sobre {
+            color: #fff;
+        }
+
+        .sobre .txt-sobre h2 {
+            font-size: 40px;
+            line-height: 40px;
+            margin-bottom: 30px;
+        }
+
+        .sobre .txt-sobre h2 span {
+            color: #00ff08;
+            display: block;
+        }
+
+        .sobre .txt-sobre p {
+            margin: 20px 0;
+            text-align: justify;
+        }
+
+        .btn-social button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            background-color: #00ff08;
+            font-size: 22px;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: .2s;
+        }
+
+        /* ESTILO DO PORTFÓLIO */
+
+        section.portfolio {
+            padding: 80px 4%;
+            box-shadow: 0 0 40px 10px #ffffff1d;
+        }
+
+        section.portfolio .flex {
+            justify-content: space-around;
+            margin-top: 60px;
+        }
+
+        .img-port {
+            width: 360px;
+            height: 460px;
+            background-size: cover;
+            background-position: 100% 0%;
+            transition: 5s;
+            cursor: pointer;
+            border-radius: 40px;
+            position: relative;
+        }
+
+        .img-port:hover {
+            background-position: 100% 100%;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000b8;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            opacity: 0;
+            transition: .5s;
+        }
+
+        .overlay:hover {
+            opacity: 1;
+        }
+
+        /* ESTILO DO FORMULARIO DE CONTATO */
+
+        section.formulario {
+            padding: 80px 4%;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            background-color: #242424;
+            border: 0;
+            outline: 0;
+            padding: 20px 15px;
+            border-radius: 15px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        form textarea {
+            resize: none;
+            max-height: 200px;
+        }
+
+        form .btn-enviar {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        form .btn-enviar input {
+            width: 120px;
+            background-color: #00ff08;
+            color: #000;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        /* ESTILO DO RODAPÉ */
+
+        footer {
+            padding: 40px 4%;
+            box-shadow: 0 0 40px 10px #ffffff1d;
+        }
+
+        footer .flex {
+            justify-content: space-between;
+        }
+
+        footer .line-footer {
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .borda {
+            border-top: 2px solid #00ff08;
+        }
+
+        footer .line-footer p i {
+            color: #00ff08;
+            font-size: 22px;
+        }
+
+        footer .line-footer p a {
+            color: #fff;
+        }
+
+        /* Para dividir ELTON e MATOS em duas linhas */
+        .titulo {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .titulo span {
+            display: block;
+            font-size: 35px;
+            margin-top: -20px;
+        }
+
+        /* Alinhando os botões à direita */
+        .btn-social {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        @media screen and (max-width: 1020px) {
+            .flex {
+                flex-direction: column;
+            }
+
+            h2.titulo {
+                font-size: 34px;
+                line-height: 30px;
+            }
+
+            .menu-desktop,
+            .btn-contato {
+                display: none;
+            }
+
+            section.topo-do-site .flex {
+                gap: 40px;
+            }
+
+            section.topo-do-site {
+                padding: 20px 8%;
+            }
+
+            .topo-do-site h1 {
+                font-size: 30px;
+            }
+
+            .topo-do-site .img-topo-site img {
+                width: 100%;
+            }
+
+            section.especialidades {
+                padding: 40px 8%;
+            }
+
+            section.sobre {
+                padding: 40px 8%;
+            }
+
+            .sobre .txt-sobre h2 {
+                font-size: 28px;
+                line-height: 28px;
+            }
+
+            section.portfolio {
+                padding: 40px 8%;
+            }
+
+            .img-port {
+                width: 100%;
+            }
+
+            section.formulario {
+                padding: 40px 8%;
+            }
+
+            footer {
+                padding: 40px 8%;
+            }
+        }

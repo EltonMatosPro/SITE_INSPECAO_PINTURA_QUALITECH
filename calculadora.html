@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Pintura</title>
+    
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+<body>
+    <header>
+       <div class="interface">
+            
+            <div class="logo">
+                <a href="#">
+                    <!-- <img src="images/logo.png" alt="Logo do portfólio">    -->
+                    <h2 class="titulo">QualiTech <span>Soluções em Inspeções</span></h2>
+                </a>
+
+                </div>
+                    <nav class="menu-desktop">
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Serviços</a></li>
+                            <li><a href="#">Especialidades</a></li>
+                            <li><a href="#">Projetos</a></li>
+                            <li><a href="#">Contato</a></li>
+                            <li><a href="calculadora.html">Calculadora de Pintura</a></li>
+                        </ul>
+                    </nav>
+
+                <div class="btn-contato">
+
+                <a href="#">
+                    <button>Contato</button>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="calculadora" id="calculadora">
+        <h2>Calculadora de Pintura </h2>
+        <div class="calculadora-container">
+
+            <!-- EPU (Espessura da Película Úmida) -->
+             
+            <div class="calculadora-box">
+                <h3>Espessura da Película Úmida (EPU)</h3>
+                <form>
+                    <label for="eps-seca">EPS: (µm):</label>
+                    <input type="number" id="eps-seca" placeholder="Digite a Camada seca" required>
+                    
+                    <label for="sv">SV (%):</label>
+                    <input type="number" id="sv" placeholder="Digite o Solido por Volume" required>
+                    
+                    <label for="diluicao">Diluição (%):</label>
+                    <input type="number" id="diluicao" placeholder="Digite a diluição" required>
+            
+                    <button type="button" onclick="calcularEPU()">Calcular</button>
+                    <button type="button" onclick="limpar()">Limpar</button>
+            
+                    <label for="epu-umida">EPU (µm):</label>
+                    <input type="number" id="epu-umida" readonly> <!-- Caixa de resultado -->
+            
+                    <h4>Fórmula:</h4>
+                    <h5>EPU = EPS x (100 + %DIL) / SV</h5>
+            
+                    <ul>
+                        <li>EPS = Espessura de Película Seca</li>
+                        <li>EPU = Espessura de Película Úmida</li>
+                        <li>SV = Sólido por Volume</li>
+                        <li>%Dil = Percentual de Diluente</li>
+                    </ul>
+                </form>
+            </div>
+            
+
+            <!-- EPS (Espessura da Película Seca) -->
+
+                <div class="calculadora-box">
+                    <h3>Espessura da Película Seca (EPS)</h3>
+                    <form>
+                        <label for="epu-umida">EPU (µm):</label>
+                        <input type="number" id="epu-umida-seca" required>
+
+                        <label for="sv">SV (%):</label>
+                        <input type="number" id="sv-seca" required>
+
+                        <label for="diluicao">Diluição (%):</label>
+                        <input type="number" id="diluicao-seca" required>
+
+                        <button type="button" onclick="calcularEPS()">Calcular</button>
+                        <button type="button" onclick="limparEPS()">Limpar</button>
+
+                        <label for="eps-seca">EPS (µm):</label>
+                        <input type="number" id="eps-seca-umida" readonly> <!-- Caixa de resultado -->
+
+                        <h4>Fórmula:</h4>
+                        <h5>EPS = (EPU x SV) / (100 + %DIL)</h5>
+
+                        <ul>
+                            <li>EPS = Espessura da Película Seca</li>
+                            <li>EPU = Espessura da Película Úmida</li>
+                            <li>SV = Sólido por Volume</li>
+                            <li>%DIL = Percentual de Diluente</li>
+                        </ul>
+                    </form>
+                    <p id="resultado-eps"></p>
+                </div>
+
+            <!-- Relação de Mistura -->
+            <div class="calculadora-box">
+                <h3>Relação de Mistura</h3>
+                <form>
+                    <label for="relacaoA">Relação de Mistura (Componente A):</label>
+                    <input type="number" step="0.01" id="relacaoA" placeholder="Digite a relação da tinta (ex: 6)">
+            
+                    <label for="relacaoB">Relação de Mistura (Componente B):</label>
+                    <input type="number" step="0.01" id="relacaoB" placeholder="Digite a relação do catalisador (ex: 1)">
+            
+                    <label for="volumeDesejado">Volume desejado (em litros):</label>
+                    <input type="number" step="0.01" id="volumeDesejado" value="1" placeholder="Digite o volume desejado">
+            
+                    <label for="proporcaoDiluente">Proporção de Diluente (%):</label>
+                    <input type="number" step="0.01" id="proporcaoDiluente" placeholder="Digite a proporção de diluente (até 20%)">
+            
+                  
+            
+                    <button type="button" onclick="calcularMistura()">Calcular</button>
+                    <button type="button" onclick="limparMistura()">Limpar</button>
+                </form>
+                <p id="resultado-mistura"></p><br>
+            </div>
+
+            <!-- Rendimento Teórico e Prático -->
+           
+           
+           <div class="calculadora-box">
+            <h3>Rendimento Teórico e Prático</h3>
+        <form>
+            <label for="metodo-aplicacao">Método de Aplicação:</label>
+
+            <select id="metodo-aplicacao" onchange="atualizarPerda()">
+                <option value=""></option>
+                <option value="pincel">Pincel (10 a 20%)</option>
+                <option value="rolo">Rolo (10 a 30%)</option>
+                <option value="pistola-convencional">Pistola Convencional (30 a 50%)</option>
+                <option value="pistola-airless">Pistola AirLess (10 a 30%)</option>
+            </select>
+
+            <label for="eps-seca">EPS (µm):</label>
+            <input type="number" id="eps-seca-01" required>
+
+            <label for="sv">SV (%):</label>
+            <input type="number" id="sv-01" required>
+
+            <label for="perda">Perda (%):</label>
+            <input type="number" id="perda-01" required>
+
+            <label for="diluente">Proporção de Diluente (%):</label>
+            <input type="number" id="diluente-01" required>
+
+            <button type="button" onclick="calcularRendimento()">Calcular</button><br>
+            <button type="button" onclick="limparRendimento()">Limpar</button><br>
+
+            <h4>Resultado:</h4>
+
+            <label for="rend-teorico">Rendimento Teórico (m²/L):</label>
+            <input type="text" id="rend-teorico-01" readonly>
+
+            <label for="rend-pratico">Rendimento Prático (m²/L):</label>
+            <input type="text" id="rend-pratico-01" readonly>
+        </form>
+        <p id="resultado-rendimento"></p>
+
+</div>
+
+
+<div class="calculadora-box">
+    <h3>Ponto de Orvalho</h3>
+    <form>
+        <label for="ura">Umidade Relativa do Ar (%):</label>
+        <input type="number" id="ura" step="0.01" required>
+
+        <label for="tempAr">Temperatura do Ar (°C):</label>
+        <input type="number" id="tempAr" step="0.01" required>
+
+        <label for="tempPeca">Temperatura da Superfície (°C):</label>
+        <input type="number" id="tempPeca" step="0.01" required>
+
+        <!-- O botão "Verificar" deve ter type="button" -->
+        <button type="button" onclick="calcularPontoOrvalho(event)">Verificar</button><br>
+        <button type="button" onclick="limpar()">Limpar</button><br>
+
+        <label for="pontoOrvalho">Ponto de Orvalho (°C):</label>
+        <input type="text" id="pontoOrvalho" readonly>
+
+        <label for="aprovacao">Status:</label>
+        <input type="text" id="aprovacao" readonly>
+
+        <label for="resultado">Detalhes:</label>
+        <textarea id="resultado" readonly></textarea><br>
+    </form>
+    <p id="resultado-orvalho"></p>
+</div>
+
+
+            <!-- Consumo de Tinta -->
+<div class="calculadora-box">
+    <h3>Consumo de Tinta</h3>
+    <form>
+        <label for="consumo-area">Área (m²):</label>
+        <input type="number" id="consumo-area" step="0.01" required>
+
+        <label for="espessura-tinta">Espessura da Tinta (μm):</label>
+        <input type="number" id="espessura-tinta" step="0.01" required>
+
+        <label for="sv-consumo">Sólidos por Volume (%):</label>
+        <input type="number" id="sv-consumo" step="0.01" required>
+
+        <label for="consumo">Consumo (litros):</label>
+        <input type="text" id="consumo" readonly>
+
+        <button type="button" onclick="calcularConsumo()">Calcular</button><br>
+        <button type="button" onclick="limparConsumo()">Limpar</button><br>
+    </form>
+</div>
+
+
+            <!-- Determinação do Custo da Tinta -->
+            <div class="calculadora-box">
+                <h3>Determinação do Custo da Tinta</h3>
+                <form>
+                    <label for="preço-tinta">Preço (R$/litro):</label>
+                    <input type="number" id="preço-tinta" required>
+                    <label for="custo-tinta">Custo Tinta (m²):</label>
+                    <input type="number" id="custo-tinta" required>
+                    <button type="button" onclick="calcularCusto()">Calcular</button><br>
+                    <button type="button" onclick="limpar()">Limpar</button><br>
+                    <h4>Resultado:</h4>
+                    <label for="preço-tinta">CT (R$/m²):</label>
+                    <input type="number" id="custo-tinta" required>
+                    <h4>Formulas:</h4>
+                    <h5>CT = Preço (R$/L) / RP(m²/L)</h5>
+
+                   <ul>
+                        <li>CT = CUSTO da Tinta(R$/m²)</li>
+                        <li>Preço = Preço da Tinta (R$/L)</li>
+                        <li>RP = Rendimento Prático</li>
+                       
+                   </ul>
+
+                </form>
+                <p id="resultado-custo"></p>
+            </div>
+
+          
+<!-- Cálculo de Volume de Tinta -->
+<div class="calculadora-box">
+    <h3>Cálculo de Volume de Tinta</h3>
+    <form>
+        <label for="area">Área (m²):</label>
+        <input type="number" id="area" step="0.01" required>
+
+        <label for="rp">RP (m²/L):</label>
+        <input type="number" id="rp" step="0.01" required>
+
+        <h4>Selecione a unidade de medida:</h4>
+        <label>
+            <input type="radio" name="unidade" value="3.6"> Galão (3,6 Litros)
+        </label><br>
+        <label>
+            <input type="radio" name="unidade" value="0.9"> Quarto de Galão (0,9 Litros)
+        </label><br>
+        <label>
+            <input type="radio" name="unidade" value="18"> Lata/Balde (18 Litros)
+        </label><br>
+        <label>
+            <input type="radio" name="unidade" value="200"> Tambor (200 Litros)
+        </label><br>
+
+        <button type="button" onclick="calcularCusto()">Calcular</button><br>
+        <button type="button" onclick="limparCampos()">Limpar</button><br>
+
+        <h4>Resultado:</h4>
+        <label for="volume-tinta">VT (Litros):</label>
+        <input type="number" id="volume-tinta" readonly><br>
+
+        <label for="unidadeResultado">Quantidade de Unidades:</label>
+        <input type="text" id="unidadeResultado" readonly><br>
+
+        <h4>Fórmulas:</h4>
+        <h5>VT = A / RP</h5>
+
+        <ul>
+            <li>VT = Volume de Tinta (Litros)</li>
+            <li>A = Área a ser pintada (m²)</li>
+            <li>RP = Rendimento Prático da Tinta (m²/L)</li>
+        </ul>
+    </form>
+</div>
+
+
+
+        <!-- Custo Calculo de Volume de Diluente -->
+<div class="calculadora-box">
+    <h3>Calculo de Volume de Diluente</h3>
+    <form>
+        <label for="vt">VT (Litros):</label>
+        <input type="number" id="vt" step="0.01" required>
+
+        <label for="dil">Dil% (%):</label>
+        <input type="number" id="dil" step="0.01" required>
+
+        <button type="button" onclick="calcularVolumeDiluente()">Calcular</button><br>
+        <button type="button" onclick="limparCampos()">Limpar</button><br>
+
+        <h4>Resultado:</h4>
+        <label for="vd">VD:</label>
+        <input type="text" id="vd" readonly>
+
+        <h4>Fórmulas:</h4>
+        <h5>VD = VT x (Dil% / 100)</h5>
+
+        <ul>
+            <li>VT = Volume de Tinta (Litros)</li>
+            <li>Dil% = Percentual de Diluição (%)</li>
+            <li>VD = Volume de Diluente (Litros ou ml)</li>
+        </ul>
+    </form>
+</div>
+<p id="resultado-custo"></p>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Empresa XYZ</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+

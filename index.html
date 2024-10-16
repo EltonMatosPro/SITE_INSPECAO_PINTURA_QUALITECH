@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <title>QualiTech - Soluções em Inspeções</title>
+    <meta name="description"
+        content="Portfólio profissional de Elton Matos, especialista em desenvolvimento de websites, lojas online e blogs.">
+    <meta name="keywords" content="web design, desenvolvimento, portfólio, Elton Matos">
+
+    <script src="menu.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <h2 class="titulo">QualiTech <span>Soluções em Inspeções</span></h2>
+                </a>
+            </div>
+            
+            <nav class="menu-desktop">
+                <!-- Sidebar para mobile -->
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a href="#"><i class="bi bi-x-lg"></i></a></li>
+                    <li><a href="#">QualiTech</a></li>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Especialidades</a></li>
+                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="calculadora.html">Calculadora de Pintura</a></li>
+                </ul>
+    
+                <!-- Menu para desktop -->
+                <ul class="menu-list">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Especialidades</a></li>
+                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="calculadora.html">Calculadora de Pintura</a></li>
+                </ul>
+    
+                <!-- Botão hambúrguer para mobile -->
+                <li class="menu-button" onclick="showSidebar()">
+                    <i class="bi bi-list"></i>
+                </li>
+            </nav>
+        
+            <div class="btn-contato">
+                <a href="#"><button>Contato</button></a>
+            </div>
+        </div>
+    </header>
+    
+    
+
+    <main>
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>Inspeção de Pintura Industrial - Garantia de Qualidade e Durabilidade<span>.</span></h1>
+                        <p>Na QualiTech Soluções em Inspeções, oferecemos serviços especializados de inspeção de pintura industrial, 
+                            assegurando a máxima qualidade e durabilidade dos revestimentos aplicados em seus projetos. Com uma equipe 
+                            altamente qualificada e certificada, conduzimos inspeções rigorosas 
+                            em todas as fases do processo de pintura, desde a preparação da superfície até a aplicação final.</p>
+                        <div class="btn-contato">
+                            <a href="#"><button>Entre em contato</button></a>
+                        </div>
+                    </div>
+                    <div class="img-topo-site">
+                        <img src="imgs/pessoa.png" alt="Elton Matos criando soluções digitais">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="especialidades">
+            <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
+            <div class="flex">
+                <div class="especialidades-box">
+                    <i class="bi bi-code-square"></i>
+                    <h3>Website</h3>
+                    <p>Criação de websites funcionais e responsivos, otimizados para conversões e com design moderno.
+                    </p>
+                </div>
+                <div class="especialidades-box">
+                    <i class="bi bi-cart"></i>
+                    <h3>Loja Online</h3>
+                    <p>Desenvolvimento de lojas virtuais completas com integração de métodos de pagamento e gestão de
+                        produtos.</p>
+                </div>
+                <div class="especialidades-box">
+                    <i class="bi bi-wordpress"></i>
+                    <h3>Blog</h3>
+                    <p>Criação e customização de blogs com WordPress, focados em SEO e usabilidade.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="imgs/foto.png" alt="Foto de Elton Matos">
+                    </div>
+                    <div class="txt-sobre">
+                        <h2>Muito Prazer,<span>Sou Elton Matos.</span></h2>
+                        <p>Desenvolvedor de soluções digitais personalizadas com foco em resultados, ajudando empresas a
+                            alcançarem seus objetivos online.</p>
+                        <div class="btn-social">
+                            <a href="#"><button><i class="bi bi-instagram"></i></button></a>
+                            <a href="#"><button><i class="bi bi-youtube"></i></button></a>
+                            <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio">
+            <div class="interface">
+                <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
+                <div class="flex">
+                    <div class="img-port" style="background-image: url(imgs/imagem.jpg);">
+                        <div class="overlay">Projeto 1</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(imgs/imagem.jpg);">
+                        <div class="overlay">Projeto 2</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(imgs/imagem.jpg);">
+                        <div class="overlay">Projeto 3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="formulario">
+            <div class="interface">
+                <h2 class="titulo">FALE <span>COMIGO.</span></h2>
+                <form action="">
+                    <label for="nome">Seu nome completo:</label>
+                    <input type="text" id="nome" placeholder="Seu nome completo:" required>
+
+                    <label for="email">Seu e-mail:</label>
+                    <input type="email" id="email" placeholder="Seu e-mail:" required>
+
+                    <label for="celular">Seu celular:</label>
+                    <input type="tel" id="celular" placeholder="Seu celular:">
+
+                    <label for="mensagem">Sua mensagem:</label>
+                    <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+
+                    <div class="btn-enviar">
+                        <input type="submit" value="ENVIAR">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="interface">
+
+            <div class="line-footer">
+                <div class="logo-footer">
+                    <!-- <img src="images/logo.png" alt="Logo do rodapé"> -->
+                    <h2 class="titulo">QualiTech <span>Soluções em Inspeções</span></h2>
+                </div>
+                <div class="btn-social">
+                    <a href="#"><button><i class="bi bi-instagram"></i></button></a>
+                    <a href="#"><button><i class="bi bi-youtube"></i></button></a>
+                    <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+                </div>
+            </div>
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope"></i> <a href="mailto:contato@elton.com.br">contato@elton.com.br</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
