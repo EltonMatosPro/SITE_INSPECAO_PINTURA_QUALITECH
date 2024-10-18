@@ -19,8 +19,7 @@
         content="Portfólio profissional de Elton Matos, especialista em desenvolvimento de websites, lojas online e blogs.">
     <meta name="keywords" content="web design, desenvolvimento, portfólio, Elton Matos">
 
-    <script src="menu.js"></script>
-
+    <script src="scripts/menu.js" defer></script>
 </head>
 
 <body>
@@ -31,11 +30,11 @@
                     <h2 class="titulo">QualiTech <span>Soluções em Inspeções</span></h2>
                 </a>
             </div>
-            
+
             <nav class="menu-desktop">
                 <!-- Sidebar para mobile -->
                 <ul class="sidebar">
-                    <li onclick="hideSidebar()"><a href="#"><i class="bi bi-x-lg"></i></a></li>
+                    <li onclick="toggleSidebar()"><a href="#"><i class="bi bi-x-lg"></i></a></li>
                     <li><a href="#">QualiTech</a></li>
                     <li><a href="#">Início</a></li>
                     <li><a href="#">Sobre</a></li>
@@ -45,7 +44,7 @@
                     <li><a href="#">Contato</a></li>
                     <li><a href="calculadora.html">Calculadora de Pintura</a></li>
                 </ul>
-    
+
                 <!-- Menu para desktop -->
                 <ul class="menu-list">
                     <li><a href="#">Início</a></li>
@@ -56,20 +55,18 @@
                     <li><a href="#">Contato</a></li>
                     <li><a href="calculadora.html">Calculadora de Pintura</a></li>
                 </ul>
-    
+
                 <!-- Botão hambúrguer para mobile -->
-                <li class="menu-button" onclick="showSidebar()">
-                    <i class="bi bi-list"></i>
+                <li onclick="toggleSidebar()" class="menu-button">
+                    <i class=" bi bi-list"></i>
                 </li>
             </nav>
-        
+
             <div class="btn-contato">
                 <a href="#"><button>Contato</button></a>
             </div>
         </div>
     </header>
-    
-    
 
     <main>
         <section class="topo-do-site">
@@ -77,10 +74,13 @@
                 <div class="flex">
                     <div class="txt-topo-site">
                         <h1>Inspeção de Pintura Industrial - Garantia de Qualidade e Durabilidade<span>.</span></h1>
-                        <p>Na QualiTech Soluções em Inspeções, oferecemos serviços especializados de inspeção de pintura industrial, 
-                            assegurando a máxima qualidade e durabilidade dos revestimentos aplicados em seus projetos. Com uma equipe 
-                            altamente qualificada e certificada, conduzimos inspeções rigorosas 
-                            em todas as fases do processo de pintura, desde a preparação da superfície até a aplicação final.</p>
+                        <p>Na QualiTech Soluções em Inspeções, oferecemos serviços especializados de inspeção de pintura
+                            industrial,
+                            assegurando a máxima qualidade e durabilidade dos revestimentos aplicados em seus projetos.
+                            Com uma equipe
+                            altamente qualificada e certificada, conduzimos inspeções rigorosas
+                            em todas as fases do processo de pintura, desde a preparação da superfície até a aplicação
+                            final.</p>
                         <div class="btn-contato">
                             <a href="#"><button>Entre em contato</button></a>
                         </div>
